@@ -8,7 +8,7 @@
 </head>
 <body bgcolor="lightblue">
 
-<form action="demo_form.asp" method="post">
+<form action="game" method="post">
 	<table border="1" align="center">
   		<tr>
    			<th colspan=5>Mastermind Online</th>

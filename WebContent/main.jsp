@@ -7,6 +7,20 @@
 <title>Mastermind Online</title>
 </head>
 <body bgcolor="lightblue">
-<a href=game.jsp><button>Game</button></a>
+<form action="game" method="post">
+	<table border="1" align="center">
+  		<tr>
+    		<td>
+    			Anzahl der Versuche(max: 999):
+    		</td>
+    		<td>
+    			<input name="anzahl" type="text" size="3" maxlength="3">
+    		</td>
+    		<td>
+    			<input type="submit" value="Loslegen!">
+    		</td>
+  		</tr>
+	</table>
+</form>
 </body>
 </html>
