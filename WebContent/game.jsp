@@ -19,42 +19,42 @@
   		<tr>
     		<td>
     			<select name="feld1" size="1">
-      				<option>Blau</option>
-     				<option>Gelb</option>
-      				<option>Gruen</option>
-      				<option>Lila</option>
+      				<option value="blau">Blau</option>
+     				<option value="gelb">Gelb</option>
+      				<option value="green">Gr&uuml;n</option>
+      				<option value="lila">Lila</option>
       				<option>Orange</option>
       				<option>Rot</option>
     			</select>
     		</td>
     		<td>
     			<select name="feld2" size="1">
-      				<option>Blau</option>
-     				<option>Gelb</option>
-      				<option>Gruen</option>
-      				<option>Lila</option>
-      				<option>Orange</option>
-      				<option>Rot</option>
+      				<option value="blau">Blau</option>
+     				<option value="gelb">Gelb</option>
+      				<option value="green">Gr&uuml;n</option>
+      				<option value="lila">Lila</option>
+      				<option value="orange">Orange</option>
+      				<option value="rot">Rot</option>
     			</select>
     		</td>
     		<td>
     			<select name="feld3" size="1">
-      				<option>Blau</option>
-     				<option>Gelb</option>
-      				<option>Gruen</option>
-      				<option>Lila</option>
-      				<option>Orange</option>
-      				<option>Rot</option>
+      				<option value="blau">Blau</option>
+     				<option value="gelb">Gelb</option>
+      				<option value="green">Gr&uuml;n</option>
+      				<option value="lila">Lila</option>
+      				<option value="orange">Orange</option>
+      				<option value="rot">Rot</option>
     			</select>
     		</td>
     		<td>
     			<select name="feld4" size="1">
-      				<option>Blau</option>
-     				<option>Gelb</option>
-      				<option>Gruen</option>
-      				<option>Lila</option>
-      				<option>Orange</option>
-      				<option>Rot</option>
+      				<option value="blau">Blau</option>
+     				<option value="gelb">Gelb</option>
+      				<option value="green">Gr&uuml;n</option>
+      				<option value="lila">Lila</option>
+      				<option value="orange">Orange</option>
+      				<option value="rot">Rot</option>
     			</select>
     		</td>
     		<td>
