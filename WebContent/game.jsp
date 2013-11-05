@@ -56,9 +56,6 @@
     			<input type="submit" value="Submit">
     		</td>
   		</tr>
-  		<tr>
-    		<td colspan=5 align="center">Irgendwas</td>
-  		</tr>
 	</table>
 </form>
 </body>

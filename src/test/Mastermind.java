@@ -41,20 +41,31 @@ public class Mastermind {
 		return r.get(i);
 	}
 	public String addR(Row r){
+		this.aktV ++;
 		this.r.add(r);
 		String s ="<tr>";
 		s+="<td>";
-		s+="<img src='image/" + r.getFeld1()+".png' alt='"+ r.getFeld1()+"'>";
+		s+="<img src='/image/" + r.getFeld1()+".png' alt='"+ r.getFeld1()+"'>";
 		s+="</td>";
 		s+="<td>";
-		s+="<img src='image/" + r.getFeld2()+".png' alt='"+ r.getFeld2()+"'>";
+		s+="<img src='/image/" + r.getFeld2()+".png' alt='"+ r.getFeld2()+"'>";
 		s+="</td>";
 		s+="<td>";
-		s+="<img src='image/" + r.getFeld3()+".png' alt='"+ r.getFeld3()+"'>";
+		s+="<img src='/image/" + r.getFeld3()+".png' alt='"+ r.getFeld3()+"'>";
 		s+="</td>";
 		s+="<td>";
-		s+="<img src='image/" + r.getFeld4()+".png' alt='"+ r.getFeld4()+"'>";
+		s+="<img src='/image/" + r.getFeld4()+".png' alt='"+ r.getFeld4()+"'>";
 		s+="</td>";
+		System.out.println(s);
 		return s;
+	}
+	public int getMaxV() {
+		return maxV;
+	}
+	public void setMaxV(int maxV) {
+		this.maxV = maxV;
+	}
+	public int getAktV() {
+		return aktV;
 	}
 }

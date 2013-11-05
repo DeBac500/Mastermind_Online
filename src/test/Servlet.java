@@ -39,28 +39,57 @@ public class Servlet extends HttpServlet {
 	private void does(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String anzahl = request.getParameter("anzahl");
 		int anz;
-		if(anzahl != null){
-			anz = Integer.parseInt(anzahl);
-			m = new Mastermind(anz);
-		}
-		if(m != null){
-			make(request, response);
-			RequestDispatcher rd = request.getRequestDispatcher("game.jsp");
-			response.setContentType("text/html");
-			PrintWriter out = response.getWriter();
-			out.println("<table border='0' align='center'>");
-			out.println("<tr><th>Mastermind Online</th></tr>");
-			out.println("</table>");
-			out.println("<table border='1' align='center'>");
-			out.println(this.out);
-			out.println("</table>");
+		String url[] = request.getRequestURL().toString().split("/");
+		//System.out.println(url[url.length-1]);
+		if("Mastermind_Online".equals(url[url.length-1])){
+			RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
 			rd.include(request, response);
-			
-			
 		}else{
-			response.setContentType("text/html");
-			PrintWriter out = response.getWriter();
-			out.println("Error!</br>");
+			if(anzahl != null){
+				anz = Integer.parseInt(anzahl);
+				System.out.println(anz);
+				m = new Mastermind(anz);
+				out="";
+			}
+			if(m != null){
+				if(m.getAktV() < m.getMaxV() && !m.checkwin()){
+					make(request, response);
+					RequestDispatcher rd = request.getRequestDispatcher("/game.jsp");
+					response.setContentType("text/html");
+					PrintWriter out = response.getWriter();
+					out.println("<table border='0' align='center'>");
+					out.println("<tr><th>Mastermind Online</th></tr>");
+					out.println("</table>");
+					out.println("<table border='1' align='center'>");
+					out.println(this.out);
+					out.println("</table>");
+					rd.include(request, response);
+					out.println("<table border='0' align='center'>");
+					out.println("<tr><td>"+m.getAktV() + " von " + m.getMaxV() + " Versuchen!</td></tr>");
+					out.println("</table>");
+				}else{
+					System.out.println("Test3");
+					if(m.checkwin()){
+						//RequestDispatcher rd = request.getRequestDispatcher("end.jsp");
+						response.setContentType("text/html");
+						PrintWriter out = response.getWriter();
+						out.println("<h1>Gewonnen!</h1>");
+						out.println("<a href='/Mastermind_Online/'><button>Neues Spiel!</button></a>");
+						//rd.include(request, response);
+					}else{
+						//RequestDispatcher rd = request.getRequestDispatcher("end.jsp");
+						response.setContentType("text/html");
+						PrintWriter out = response.getWriter();
+						out.println("<h1>Verloren!</h1>");
+						out.println("<a href='/Mastermind_Online/'><button>Neues Spiel!</button></a>");
+						//rd.include(request, response);
+					}
+				}
+			}else{
+				response.setContentType("text/html");
+				PrintWriter out = response.getWriter();
+				out.println("Error!</br>");
+			}
 		}
 	}
 	public void make(HttpServletRequest request, HttpServletResponse response){
