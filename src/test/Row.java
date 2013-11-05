@@ -53,68 +53,39 @@ public class Row {
 	}
 	
 	public void setFeld1(int i){
-		switch(i){
-		case 1:
-			setFeld1("blau");break;
-		case 2:
-			setFeld1("gelb");break;
-		case 3:
-			setFeld1("green");break;
-		case 4:
-			setFeld1("lila");break;
-		case 5:
-			setFeld1("orange");break;
-		case 6:
-			setFeld1("rot");break;
-		}
+		this.setFeld1(coll(i));
 	}
 	public void setFeld2(int i){
-		switch(i){
-		case 1:
-			setFeld2("blau");break;
-		case 2:
-			setFeld2("gelb");break;
-		case 3:
-			setFeld2("green");break;
-		case 4:
-			setFeld2("lila");break;
-		case 5:
-			setFeld2("orange");break;
-		case 6:
-			setFeld2("rot");break;
-		}
+		this.setFeld2(coll(i));
 	}
 	public void setFeld3(int i){
-		switch(i){
-		case 1:
-			setFeld3("blau");break;
-		case 2:
-			setFeld3("gelb");break;
-		case 3:
-			setFeld3("green");break;
-		case 4:
-			setFeld3("lila");break;
-		case 5:
-			setFeld3("orange");break;
-		case 6:
-			setFeld3("rot");break;
-		}
+		this.setFeld3(coll(i));
 	}
 	public void setFeld4(int i){
+		this.setFeld4(coll(i));
+	}
+	private String coll(int i){
 		switch(i){
 		case 1:
-			setFeld4("blau");break;
+			System.out.println("blau");
+			return"blau";
 		case 2:
-			setFeld4("gelb");break;
+			System.out.println("gelb");
+			return"gelb";
 		case 3:
-			setFeld4("green");break;
+			System.out.println("green");
+			return"green";
 		case 4:
-			setFeld4("lila");break;
+			System.out.println("lila");
+			return"lila";
 		case 5:
-			setFeld4("orange");break;
+			System.out.println("orange");
+			return"orange";
 		case 6:
-			setFeld4("rot");break;
+			System.out.println("rot");
+			return"rot";
 		}
+		return "blau";
 	}
 	public String comp(Row r){
 		ArrayList<Boolean> b = new ArrayList<Boolean>();

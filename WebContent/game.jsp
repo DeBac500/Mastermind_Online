@@ -10,12 +10,7 @@
 
 <form action="game" method="post">
 	<table border="1" align="center">
-  		<tr>
-   			<th colspan=5>Mastermind Online</th>
-  		</tr>
-  		<tr>
-    		<td colspan=5 align="center">Irgendwas</td>
-  		</tr>
+  		
   		<tr>
     		<td>
     			<select name="feld1" size="1">
@@ -23,8 +18,8 @@
      				<option value="gelb">Gelb</option>
       				<option value="green">Gr&uuml;n</option>
       				<option value="lila">Lila</option>
-      				<option>Orange</option>
-      				<option>Rot</option>
+      				<option value="orange">Orange</option>
+      				<option value="rot">Rot</option>
     			</select>
     		</td>
     		<td>
@@ -61,23 +56,10 @@
     			<input type="submit" value="Submit">
     		</td>
   		</tr>
+  		<tr>
+    		<td colspan=5 align="center">Irgendwas</td>
+  		</tr>
 	</table>
 </form>
-<table border="1" align="center">
-	<tr>
-		<td>
-			<img src="image/blau.png" alt="Blau">
-		</td>
-		<td>
-			<img src="image/blau.png" alt="Blau">
-		</td>
-		<td>
-			<img src="image/blau.png" alt="Blau">
-		</td>
-		<td>
-			<img src="image/blau.png" alt="Blau">
-		</td>
-	</tr>
-</table>
 </body>
 </html>

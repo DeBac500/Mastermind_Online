@@ -15,8 +15,9 @@ public class Mastermind {
 		genErg();
 	}
 	private void genErg(){
-		for(int i = 0; i < 4;i++){
+		for(int i = 1; i <= 4;i++){
 			int i1 = (int) (Math.random()*6+1);
+			System.out.println(i1);
 			switch(i){
 			case 1:erg.setFeld1(i1);break;
 			case 2:erg.setFeld2(i1);break;
@@ -33,10 +34,27 @@ public class Mastermind {
 		}
 		return false;
 	}
-	public String getErg(int i){
-		return erg.comp(r.get(i));
+	public String getErg(Row re){
+		return this.erg.comp(re);
 	}
 	public Row getRow(int i){
 		return r.get(i);
+	}
+	public String addR(Row r){
+		this.r.add(r);
+		String s ="<tr>";
+		s+="<td>";
+		s+="<img src='image/" + r.getFeld1()+".png' alt='"+ r.getFeld1()+"'>";
+		s+="</td>";
+		s+="<td>";
+		s+="<img src='image/" + r.getFeld2()+".png' alt='"+ r.getFeld2()+"'>";
+		s+="</td>";
+		s+="<td>";
+		s+="<img src='image/" + r.getFeld3()+".png' alt='"+ r.getFeld3()+"'>";
+		s+="</td>";
+		s+="<td>";
+		s+="<img src='image/" + r.getFeld4()+".png' alt='"+ r.getFeld4()+"'>";
+		s+="</td>";
+		return s;
 	}
 }

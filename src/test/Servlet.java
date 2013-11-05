@@ -14,15 +14,13 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String output = "";
     private Mastermind m = null;
+    private String out="";
     /**
      * @see HttpServlet#HttpServlet()
      */
     public Servlet() {
         super();
-        m=null;
-        output="";
     }
 
 	/**
@@ -48,10 +46,17 @@ public class Servlet extends HttpServlet {
 		if(m != null){
 			make(request, response);
 			RequestDispatcher rd = request.getRequestDispatcher("game.jsp");
-			rd.include(request, response);
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
-			out.println(output);
+			out.println("<table border='0' align='center'>");
+			out.println("<tr><th>Mastermind Online</th></tr>");
+			out.println("</table>");
+			out.println("<table border='1' align='center'>");
+			out.println(this.out);
+			out.println("</table>");
+			rd.include(request, response);
+			
+			
 		}else{
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
@@ -63,5 +68,11 @@ public class Servlet extends HttpServlet {
 		String feld2 = request.getParameter("feld2");
 		String feld3 = request.getParameter("feld3");
 		String feld4 = request.getParameter("feld4");
+		if(feld1 != null && feld2 != null && feld3 != null && feld4 != null ){
+			Row rr =new Row(feld1, feld2, feld3, feld4);
+			out += m.addR(rr);
+			//out += "</tr>";
+			out += "<td>" + m.getErg(rr) + "</td></tr>";
+		}
 	}
 }
